@@ -1,0 +1,18 @@
+@import '../../../styles/constants.module';
+
+
+.searchFieldRoot {
+  height: 100%;
+  padding: $spacing-base $spacing-x2 ;
+
+  outline: 2px solid $blue500;
+  border-radius: $rounding10;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  height: 100%;
+}

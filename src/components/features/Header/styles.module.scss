@@ -1,0 +1,87 @@
+@import '../../../styles/constants.module';
+@import '../../../styles/common.module';
+@import '../../../styles/typography.module';
+
+.hearedRoot {
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 70px;
+  padding: $spacing-base 0;
+
+  background-color: $background-main;
+  border-bottom: 2px solid $blue300
+}
+
+.headerContainer {
+  @extend .contentContainer;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+
+  height: 100%;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  column-gap: $spacing-x4;
+}
+
+.navButton {
+  height: 40px;
+  width: 40px;
+
+  & svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  & svg rect {
+    fill: $blue500;
+  }
+}
+
+.indexLinkWrapper {
+  display: flex;
+  align-items: center;
+  column-gap: $spacing-base;  
+
+  outline: 2px solid $blue500;
+  border-radius: $rounding10;
+
+  padding: $spacing-base $spacing-x2;
+  
+  .logo {
+    height: 25px;
+    width: 25px;
+    
+    & svg {
+      height: 25px;
+      width: 25px;
+    }
+  
+    & svg path {
+      fill: $blue500;
+    }
+  }
+
+  .linkText {
+    @include headline4;
+    text-transform: uppercase;
+  }
+}
+
+.searchContainer {
+  height: 40px;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+

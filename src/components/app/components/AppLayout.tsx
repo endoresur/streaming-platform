@@ -1,3 +1,4 @@
+import Header from 'components/features/Header'
 import { ReactNode } from 'react'
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
 const AppLayout = ({ children }: Props) => {
   return (
     <>
-      <header>header</header>
+      <Header />
       <main>{children}</main>
       <footer>footer</footer>
     </>
