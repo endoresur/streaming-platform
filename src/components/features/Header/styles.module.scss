@@ -2,86 +2,45 @@
 @import '../../../styles/common.module';
 @import '../../../styles/typography.module';
 
-.hearedRoot {
-  position: sticky;
+.headerRoot {
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 
   width: 100%;
-  height: 70px;
-  padding: $spacing-base 0;
-
-  background-color: $background-main;
-  border-bottom: 2px solid $blue300
+  background-color: $decor-purple;
 }
 
-.headerContainer {
-  @extend .contentContainer;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-
-  height: 100%;
-}
-
-.navContainer {
+.headerInner {
   display: flex;
   align-items: center;
-  column-gap: $spacing-x4;
+  justify-content: space-between;
 }
 
-.navButton {
-  height: 40px;
-  width: 40px;
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
 
+.logo {
+  @include headline3;
+
+  color: $decor-yellow;
+  margin-right: $spacing-x3;
+  
   & svg {
-    height: 100%;
-    width: 100%;
-  }
-
-  & svg rect {
-    fill: $blue500;
+    margin-right: $spacing-base;
   }
 }
 
-.indexLinkWrapper {
-  display: flex;
-  align-items: center;
-  column-gap: $spacing-base;  
 
-  outline: 2px solid $blue500;
-  border-radius: $rounding10;
-
-  padding: $spacing-base $spacing-x2;
-  
-  .logo {
-    height: 25px;
-    width: 25px;
-    
-    & svg {
-      height: 25px;
-      width: 25px;
-    }
-  
-    & svg path {
-      fill: $blue500;
-    }
-  }
-
-  .linkText {
-    @include headline4;
-    text-transform: uppercase;
-  }
+.topMenu {
+  min-width: 200px;
+  background-color: transparent;
+  color: $text-white;
 }
 
-.searchContainer {
-  height: 40px;
+.headerRight {
+  cursor: pointer;
 }
-
-.buttonsContainer {
-  display: flex;
-  justify-content: flex-end;
-}
-
-

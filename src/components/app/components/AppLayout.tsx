@@ -1,17 +1,31 @@
+import { Layout } from 'antd'
 import Header from 'components/features/Header'
+import NavBar from 'components/features/NavBar'
 import { ReactNode } from 'react'
+
+import commonStyles from '../../../styles/_common.module.scss'
+import styles from './styles.module.scss'
 
 interface Props {
   children: ReactNode
 }
 
 const AppLayout = ({ children }: Props) => {
+  const { Footer, Sider, Content } = Layout
+
   return (
-    <>
+    <Layout>
       <Header />
-      <main>{children}</main>
-      <footer>footer</footer>
-    </>
+      <Layout>
+        <Sider theme="light" className={styles.navbar}>
+          <NavBar />
+        </Sider>
+        <Content style={{ paddingLeft: '200px', paddingTop: '64px' }}>
+          {children}
+          <Footer>Footer</Footer>
+        </Content>
+      </Layout>
+    </Layout>
   )
 }
 

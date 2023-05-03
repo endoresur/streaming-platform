@@ -1,0 +1,13 @@
+
+.appLayoutRoot {
+  display: flex;
+}
+
+.navbar {
+  position: fixed !important;
+  overflow: auto;
+  height: calc(100vh - 64px);
+  left: 0;
+  top: 64px;
+  bottom: 0;
+}
