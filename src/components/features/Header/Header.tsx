@@ -30,6 +30,10 @@ const Header = ({ onNavButtonClick }: Props) => {
           </Link>
         </div>
 
+        <div className={styles.headerCenter}>
+          <SearchField className={styles.searchInput} />
+        </div>
+
         <div className={styles.headerRight}>
           <Popover trigger="click" content={<Link href={Routes.AUTH}>выйти</Link>}>
             <Avatar>A</Avatar>

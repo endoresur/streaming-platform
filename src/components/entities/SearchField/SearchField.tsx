@@ -1,10 +1,17 @@
+import { Input } from 'antd'
 import styles from './styles.module.scss'
 
-const SearchField = () => {
+interface Props {
+  className?: string
+}
+
+const SearchField = ({ className }: Props) => {
+  const { Search } = Input
+
   return (
-    <div className={styles.searchFieldRoot}>
-      <input type="text" className={styles.input} placeholder="Введите запрос" />
-    </div>
+    <>
+      <Search placeholder="Введите запрос" className={`${styles.searchFieldRoot} ${className}`} />
+    </>
   )
 }
 

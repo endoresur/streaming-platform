@@ -50,5 +50,12 @@
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  line-height: 20px;ght: 20px;
+  line-height: 20px;
+}
+
+@mixin button3 {
+  font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
 }

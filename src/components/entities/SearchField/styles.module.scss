@@ -1,18 +1,43 @@
-@import '../../../styles/constants.module';
+@import 'styles/constants.module';
 
 
 .searchFieldRoot {
-  height: 100%;
-  padding: $spacing-base $spacing-x2 ;
+  & span input {
+    background-color: transparent;
+    border-color: $decor-yellow;
+    color: $text-white !important;
 
-  outline: 2px solid $blue500;
-  border-radius: $rounding10;
-}
+    &::placeholder {
+      color: $hover-light !important;
+    }
 
-.input {
-  border: none;
-  outline: none;
-  background-color: transparent;
+    &:hover {
+      border-color: $hover-light !important;
+    }
+    &:focus {
+      border-color: $hover-light !important;
+    }
+  }
 
-  height: 100%;
+  & span span {
+    background-color: $decor-purple;
+    
+    & button {
+      border-color: $decor-yellow;
+      background-color: $decor-purple;
+      
+      &:hover {
+        border-color: $hover-light !important;
+
+        & span {
+          color: $hover-light;
+        }
+      }
+      
+      & span {
+        transition: color 200ms ease;
+        color: $decor-yellow;  
+      }
+    }
+  }
 }

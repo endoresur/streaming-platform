@@ -1,3 +1,4 @@
+@import 'styles/_constants.module.scss';
 
 .appLayoutRoot {
   display: flex;
@@ -8,13 +9,19 @@
   overflow: auto;
   height: calc(100vh - 64px);
   left: 0;
-  top: 64px;
+  top: $spacing-x8;
   bottom: 0;
 }
 
 .content {
-  padding-top: 64px;
-  padding-left: 200px;
+  padding-top: $spacing-x8;
+  padding-left: 220px;
+
+  transition: padding-left 200ms ease;
+}
+
+.navClosed {
+  padding-left: 120px !important;
 }
 
 .authContent {
@@ -22,5 +29,6 @@
 }
 
 .footer {
-  padding-left: 250px;
+  padding-left: 220px;
+  padding-right: 0;
 }

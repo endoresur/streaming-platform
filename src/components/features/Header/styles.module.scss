@@ -1,6 +1,6 @@
-@import '../../../styles/constants.module';
-@import '../../../styles/common.module';
-@import '../../../styles/typography.module';
+@import 'styles/constants.module';
+@import 'styles/common.module';
+@import 'styles/typography.module';
 
 .headerRoot {
   position: fixed;
@@ -31,7 +31,7 @@
   margin-right: $spacing-x4;
 
   &:hover {
-    color: $blue-hover;
+    color: $hover-light;
   }
 }
 
@@ -53,10 +53,11 @@
   }
 
   &:hover {
-    border: 2px solid $blue-hover;
+    border: 2px solid $hover-light;
+    color: $hover-light;
   }
   &:active {
-    color: $blue-hover;
+    color: $hover-light;
   }
 }
 
@@ -69,4 +70,13 @@
 
 .headerRight {
   cursor: pointer;
+}
+
+.headerCenter {
+  height: fit-content;
+  width: 450px;
+}
+
+.searchInput {
+  display: block;
 }

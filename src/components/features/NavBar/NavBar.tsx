@@ -1,5 +1,5 @@
-import { RightCircleOutlined } from '@ant-design/icons'
-import { Button } from 'antd'
+import { HeartOutlined, RightCircleOutlined, YoutubeOutlined } from '@ant-design/icons'
+import NavButton from 'components/ui/NavButton'
 import styles from './styles.module.scss'
 
 interface Props {
@@ -7,14 +7,17 @@ interface Props {
 }
 
 const NavBar = ({ isNavOpen }: Props) => {
-  console.log(isNavOpen)
-
   return (
     <div className={styles.navBarRoot}>
-      <Button className={styles.button} type="default">
+      <NavButton text="В тренде" className={styles.button} onClick={() => console.log('gvuh')} isSmall={!isNavOpen}>
         <RightCircleOutlined />
-        Популярное
-      </Button>
+      </NavButton>
+      <NavButton text="Подписки" className={styles.button} onClick={() => console.log('gvuh')} isSmall={!isNavOpen}>
+        <HeartOutlined />
+      </NavButton>
+      <NavButton text="Стримы" className={styles.button} onClick={() => console.log('gvuh')} isSmall={!isNavOpen}>
+        <YoutubeOutlined />
+      </NavButton>
     </div>
   )
 }

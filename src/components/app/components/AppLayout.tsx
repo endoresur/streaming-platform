@@ -24,13 +24,15 @@ const AppLayout = ({ children }: Props) => {
       <Header onNavButtonClick={onNavButtonClick} />
       <Layout>
         {!isAuthPage && (
-          <Sider theme="light" className={styles.navbar}>
+          <Sider theme="light" width="220px" collapsed={!isNavOpen} collapsedWidth="120px" className={styles.navbar}>
             <NavBar isNavOpen={isNavOpen} />
           </Sider>
         )}
-        <Content className={!isAuthPage ? styles.content : styles.authContent}>{children}</Content>
+        <Content className={`${isAuthPage ? styles.authContent : styles.content} ${!isNavOpen && styles.navClosed}`}>
+          {children}
+        </Content>
       </Layout>
-      {!isAuthPage && <Footer className={styles.footer}>Footer</Footer>}
+      {!isAuthPage && <Footer className={`${styles.footer} ${!isNavOpen && styles.navClosed}`}>Footer</Footer>}
     </Layout>
   )
 }
