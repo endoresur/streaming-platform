@@ -1,20 +1,8 @@
-import Routes from 'constants/routes'
-import { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+export { default } from 'views/me'
+import { GetServerSideProps } from 'next'
 
-const MePage: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <title>Личный кабинет</title>
-      </Head>
-      <section>
-        <h1>Личный кабинет</h1>
-        <Link href={Routes.INDEX}>на главную</Link>
-      </section>
-    </>
-  )
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {}
+  }
 }
-
-export default MePage

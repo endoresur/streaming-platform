@@ -2,10 +2,13 @@
 @import 'styles/_constants.module.scss';
 
 .navButtonRoot {
-  & span {
+  padding: 4px 40px;
+  height: fit-content;
+
+  & a span {
     @include button3;
   }
-  & span svg {
+  & a span svg {
     transition: height 200ms ease, width 200ms ease;
   }
   
@@ -16,13 +19,19 @@
   }
 }
 
+.link {
+  display: flex;
+  justify-content: start;
+  column-gap: 8px;
+  padding: 0 !important;
+}
+
 .smallButton {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  height: fit-content;
   padding-top: $spacing-base;
 
   & span svg {

@@ -20,6 +20,12 @@
   transition: padding-left 200ms ease;
 }
 
+.pageContent {
+  max-width: 1284px;
+  padding: $spacing-x3 $spacing-x6;
+  margin: 0 auto;
+}
+
 .navClosed {
   padding-left: 120px !important;
 }

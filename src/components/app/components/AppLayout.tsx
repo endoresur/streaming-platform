@@ -29,7 +29,7 @@ const AppLayout = ({ children }: Props) => {
           </Sider>
         )}
         <Content className={`${isAuthPage ? styles.authContent : styles.content} ${!isNavOpen && styles.navClosed}`}>
-          {children}
+          <div className={styles.pageContent}>{children}</div>
         </Content>
       </Layout>
       {!isAuthPage && <Footer className={`${styles.footer} ${!isNavOpen && styles.navClosed}`}>Footer</Footer>}

@@ -1,27 +1,27 @@
 import { Button } from 'antd'
-import { ReactNode, useEffect } from 'react'
+import Routes from 'constants/routes'
+import Link from 'next/link'
+import { ReactNode } from 'react'
 import styles from './styles.module.scss'
 
 interface Props {
   children: ReactNode
   text: string
-  onClick: () => void
+  rout: Routes
+  onClick?: () => void
   buttonType?: 'default' | 'primary' | 'ghost' | 'dashed' | 'link' | 'text'
   className?: string
   isSmall?: boolean
 }
 
-const NavButton = ({ children, text, buttonType = 'default', className, onClick, isSmall }: Props) => {
+const NavButton = ({ children, text, buttonType = 'default', className, onClick, isSmall, rout }: Props) => {
   return (
     <>
-      <Button
-        className={`${styles.navButtonRoot} ${isSmall && styles.smallButton} ${className}`}
-        type={buttonType}
-        role="link"
-        onClick={onClick}
-      >
-        {children}
-        <span>{text}</span>
+      <Button className={`${styles.navButtonRoot} ${className}`} type={buttonType} role="link" onClick={onClick}>
+        <Link href={rout} passHref className={`${styles.link} ${isSmall && styles.smallButton}`}>
+          {children}
+          <span>{text}</span>
+        </Link>
       </Button>
     </>
   )
