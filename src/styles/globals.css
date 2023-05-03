@@ -6,20 +6,10 @@
 }
 
 #__next {
-  max-height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-  /* overflow: hidden; */
-
   background-color: #F3F4F6;
-}
-
-main {
-  /* height: 200vh; */
-  height: 100vh;
-  /* overflow: scroll; */
-  flex-grow: 1;
 }
 
 button,

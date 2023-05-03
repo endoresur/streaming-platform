@@ -1,4 +1,4 @@
-import { CloudOutlined, PlayCircleOutlined } from '@ant-design/icons'
+import { CloudOutlined, MenuOutlined, PlayCircleOutlined } from '@ant-design/icons'
 import { Layout, Menu, Popover, Button, Avatar } from 'antd'
 import SearchField from 'components/entities/SearchField'
 import Icons from 'constants/icons'
@@ -11,49 +11,22 @@ import styles from './styles.module.scss'
 const Header = () => {
   const router = useRouter()
 
-  // return (
-  //   <header className={styles.headerRoot}>
-  //     <div className={styles.headerContainer}>
-  //       <div className={styles.navContainer}>
-  //         <button className={styles.navButton}>
-  //           <ReactSVG src={Icons.header.menu} />
-  //         </button>
-  //         <Link href={Routes.INDEX} className={styles.indexLinkWrapper}>
-  //           <ReactSVG src={Icons.common.logo} className={styles.logo} />
-  //           <span className={styles.linkText}>Stream</span>
-  //         </Link>
-  //       </div>
-
-  //       <div className={styles.searchContainer}>
-  //         <SearchField />
-  //       </div>
-
-  //       <div className={styles.buttonsContainer}>
-  //         <Button text="Войти" href={Routes.ME} isLink imagePosition="right" imageSrc={Icons.common.user} />
-  //       </div>
-  //     </div>
-  //   </header>
-  // )
-
   return (
     <Layout.Header className={styles.headerRoot}>
       <div className={styles.headerInner}>
         <div className={styles.headerLeft}>
+          <button className={styles.navButton}>
+            <MenuOutlined />
+          </button>
+
           <Link href={Routes.INDEX} className={styles.logo}>
             <PlayCircleOutlined />
-            STREAM
+            stream
           </Link>
         </div>
 
         <div className={styles.headerRight}>
-          <Popover
-            trigger="click"
-            content={
-              <Button onClick={() => console.log('hbkj')} type="primary" danger>
-                Выйти
-              </Button>
-            }
-          >
+          <Popover trigger="click" content={<Link href={Routes.AUTH}>выйти</Link>}>
             <Avatar>A</Avatar>
           </Popover>
         </div>

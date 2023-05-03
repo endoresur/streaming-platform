@@ -11,3 +11,15 @@
   top: 64px;
   bottom: 0;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 64px;
+  padding-left: 200px;
+
+  .pageContent {
+    flex-grow: 1;
+  }
+}

@@ -3,7 +3,6 @@ import Header from 'components/features/Header'
 import NavBar from 'components/features/NavBar'
 import { ReactNode } from 'react'
 
-import commonStyles from '../../../styles/_common.module.scss'
 import styles from './styles.module.scss'
 
 interface Props {
@@ -20,8 +19,8 @@ const AppLayout = ({ children }: Props) => {
         <Sider theme="light" className={styles.navbar}>
           <NavBar />
         </Sider>
-        <Content style={{ paddingLeft: '200px', paddingTop: '64px' }}>
-          {children}
+        <Content className={styles.content}>
+          <div className={styles.pageContent}>{children}</div>
           <Footer>Footer</Footer>
         </Content>
       </Layout>

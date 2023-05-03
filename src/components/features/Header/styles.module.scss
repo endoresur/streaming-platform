@@ -23,14 +23,37 @@
   align-items: center;
 }
 
+.navButton {
+  @include headline3;
+  color: $decor-yellow;
+  transition: color 200ms ease;
+
+  margin-right: $spacing-x4;
+
+  &:hover {
+    color: $blue-hover;
+  }
+}
+
 .logo {
   @include headline3;
 
-  color: $decor-yellow;
+  outline: 2px solid $decor-yellow;
+  padding: 3px 10px;
+  border-radius: $rounding20;
   margin-right: $spacing-x3;
+
+  color: $decor-yellow;
+  text-transform: uppercase;
+
+  transition: outline 200ms ease;
   
   & svg {
     margin-right: $spacing-base;
+  }
+
+  &:hover {
+    outline: 2px solid $blue-hover;
   }
 }
 
