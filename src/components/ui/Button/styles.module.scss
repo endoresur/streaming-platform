@@ -1,0 +1,30 @@
+@import '../../../styles/constants.module';
+@import '../../../styles/typography.module';
+
+.buttonRoot {
+  display: flex;
+  column-gap: $spacing-x2;
+
+  outline: 2px solid $blue500;
+  border-radius: $rounding10;
+
+  padding: $spacing-base $spacing-x2;
+
+  & div {
+    height: 100%;
+  }
+
+  & svg {
+    display: block;
+    height: 100%; 
+    width: auto;
+  }
+
+  & svg path {
+    fill: $blue500;
+  }
+}
+
+.buttonText {
+  @include body1
+}

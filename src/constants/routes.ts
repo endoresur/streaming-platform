@@ -1,5 +1,6 @@
 enum Routes {
-  INDEX = '/'
+  INDEX = '/',
+  ME = '/me'
 }
 
 export default Routes

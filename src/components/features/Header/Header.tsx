@@ -1,4 +1,5 @@
 import SearchField from 'components/entities/SearchField'
+import Button from 'components/ui/Button'
 import Icons from 'constants/icons'
 import Routes from 'constants/routes'
 import Link from 'next/link'
@@ -26,7 +27,7 @@ const Header = () => {
         </div>
 
         <div className={styles.buttonsContainer}>
-          <div>ygiu</div>
+          <Button text="Войти" href={Routes.ME} isLink imagePosition="right" imageSrc={Icons.common.user} />
         </div>
       </div>
     </header>
