@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Tabs } from 'antd'
 import LoginForm from 'components/features/LoginForm'
 import RegisterForm from 'components/features/RegisterForm'
+import AuthForms from 'components/ui/AuthForms'
 
 const AuthPage: NextPage = () => {
   return (
@@ -10,7 +11,7 @@ const AuthPage: NextPage = () => {
       <Head>
         <title>Auth</title>
       </Head>
-      <main style={{ width: 400, margin: '50px auto' }}>
+      <AuthForms>
         <Tabs
           items={[
             {
@@ -25,7 +26,7 @@ const AuthPage: NextPage = () => {
             }
           ]}
         />
-      </main>
+      </AuthForms>
     </>
   )
 }

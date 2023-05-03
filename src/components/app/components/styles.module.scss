@@ -13,13 +13,14 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-
   padding-top: 64px;
   padding-left: 200px;
+}
 
-  .pageContent {
-    flex-grow: 1;
-  }
+.authContent {
+  height: 100vh;
+}
+
+.footer {
+  padding-left: 250px;
 }

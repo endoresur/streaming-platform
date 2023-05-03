@@ -1,23 +1,28 @@
-import { CloudOutlined, MenuOutlined, PlayCircleOutlined } from '@ant-design/icons'
+import { MenuOutlined, PlayCircleOutlined } from '@ant-design/icons'
 import { Layout, Menu, Popover, Button, Avatar } from 'antd'
 import SearchField from 'components/entities/SearchField'
-import Icons from 'constants/icons'
 import Routes from 'constants/routes'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { ReactSVG } from 'react-svg'
 import styles from './styles.module.scss'
 
-const Header = () => {
+interface Props {
+  onNavButtonClick: () => void
+}
+
+const Header = ({ onNavButtonClick }: Props) => {
   const router = useRouter()
+  const isAuthPage = router.pathname.includes('/auth')
 
   return (
     <Layout.Header className={styles.headerRoot}>
       <div className={styles.headerInner}>
         <div className={styles.headerLeft}>
-          <button className={styles.navButton}>
-            <MenuOutlined />
-          </button>
+          {!isAuthPage && (
+            <button className={styles.navButton} onClick={onNavButtonClick}>
+              <MenuOutlined />
+            </button>
+          )}
 
           <Link href={Routes.INDEX} className={styles.logo}>
             <PlayCircleOutlined />

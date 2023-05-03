@@ -1,7 +1,8 @@
 import { Layout } from 'antd'
 import Header from 'components/features/Header'
 import NavBar from 'components/features/NavBar'
-import { ReactNode } from 'react'
+import { useRouter } from 'next/router'
+import { ReactNode, useState } from 'react'
 
 import styles from './styles.module.scss'
 
@@ -10,20 +11,26 @@ interface Props {
 }
 
 const AppLayout = ({ children }: Props) => {
+  const router = useRouter()
+  const [isNavOpen, setIsNavOpen] = useState(true)
+
   const { Footer, Sider, Content } = Layout
+  const isAuthPage = router.pathname.includes('/auth')
+
+  const onNavButtonClick = () => setIsNavOpen(!isNavOpen)
 
   return (
     <Layout>
-      <Header />
+      <Header onNavButtonClick={onNavButtonClick} />
       <Layout>
-        <Sider theme="light" className={styles.navbar}>
-          <NavBar />
-        </Sider>
-        <Content className={styles.content}>
-          <div className={styles.pageContent}>{children}</div>
-          <Footer>Footer</Footer>
-        </Content>
+        {!isAuthPage && (
+          <Sider theme="light" className={styles.navbar}>
+            <NavBar isNavOpen={isNavOpen} />
+          </Sider>
+        )}
+        <Content className={!isAuthPage ? styles.content : styles.authContent}>{children}</Content>
       </Layout>
+      {!isAuthPage && <Footer className={styles.footer}>Footer</Footer>}
     </Layout>
   )
 }

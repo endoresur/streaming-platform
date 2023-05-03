@@ -38,7 +38,7 @@
 .logo {
   @include headline3;
 
-  outline: 2px solid $decor-yellow;
+  border: 2px solid $decor-yellow;
   padding: 3px 10px;
   border-radius: $rounding20;
   margin-right: $spacing-x3;
@@ -53,7 +53,10 @@
   }
 
   &:hover {
-    outline: 2px solid $blue-hover;
+    border: 2px solid $blue-hover;
+  }
+  &:active {
+    color: $blue-hover;
   }
 }
 
