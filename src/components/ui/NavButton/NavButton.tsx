@@ -17,7 +17,7 @@ interface Props {
 const NavButton = ({ children, text, buttonType = 'default', className, onClick, isSmall, rout }: Props) => {
   return (
     <>
-      <Button className={`${styles.navButtonRoot} ${className}`} type={buttonType} role="link" onClick={onClick}>
+      <Button className={`${styles.navButtonRoot} ${className}`} type={buttonType} onClick={onClick} tabIndex={-1}>
         <Link href={rout} passHref className={`${styles.link} ${isSmall && styles.smallButton}`}>
           {children}
           <span>{text}</span>

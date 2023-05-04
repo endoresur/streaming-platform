@@ -1,15 +1,20 @@
-import Routes from 'constants/routes'
+import VideoCard from 'components/ui/VideoCard'
+import { MainPageResponse } from 'models/entityModels/mainPage'
 import { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
+import { createFeed } from 'utils/testDataCreate'
 
 const IndexPage: NextPage = () => {
+  const feed = createFeed(10)
+
   return (
     <>
       <Head>
         <title>Главная страница</title>
       </Head>
-      <section>главная страница</section>
+      <section>
+        <VideoCard video={feed[0]} />
+      </section>
     </>
   )
 }

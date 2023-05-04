@@ -1,0 +1,77 @@
+@import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
+
+.videoCardRoot {
+  display: grid;
+  grid-template-rows: 65% 35%;
+
+  width: 360px;
+  height: 300px;
+
+  background-color: $background-main;
+  border-radius: $rounding10;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.infoContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: $spacing-x2;
+
+  padding: $spacing-base $spacing-x2;
+}
+
+.authorImageWrapper {
+  position: relative;
+  display: block;
+
+  height: 40px;
+  width: 40px;
+  
+  overflow: hidden;
+  border-radius: $roundingFull;
+}
+
+.videoInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.title {
+  @include headline4;
+  font-weight: 600;
+
+  display: block;
+  text-overflow: ellipsis;
+}
+
+.authorName {
+  @include body2;
+  display: block;
+  text-overflow: ellipsis;
+}
+
+.viewsPublicationWrapper {
+  @include body2;
+  display: flex;
+}
+
+.viewsCount {
+  display: block;
+  
+  &::after {
+    content: '•';
+    margin-left: $spacing-base;
+  }
+}
+
+.publicationDate {
+  display: block;
+  margin-left: $spacing-base;
+}
