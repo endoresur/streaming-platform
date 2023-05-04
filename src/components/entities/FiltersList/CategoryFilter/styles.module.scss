@@ -1,0 +1,26 @@
+@import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
+
+.categoryFilterRoot {
+  height: 36px;
+  width: 120px;
+  padding: $spacing-base;
+
+  border-radius: $rounding10;  
+  background-color: $decor-purple;
+  color: $text-white;
+
+  cursor: pointer;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: background-color 200ms ease;
+  
+  &:hover {
+    box-shadow: rgba(99, 99, 99, 0.3) 0px 5px 10px 0px;
+    background-color: $hover-dark;
+  }
+}
+
+.filterText {
+  @include button3;
+}

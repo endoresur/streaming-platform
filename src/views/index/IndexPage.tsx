@@ -1,19 +1,23 @@
-import VideoCard from 'components/ui/VideoCard'
+import FiltersList from 'components/entities/FiltersList'
 import VideoList from 'components/ui/VideoList'
-import { MainPageResponse } from 'models/entityModels/mainPage'
 import { NextPage } from 'next'
 import Head from 'next/head'
-import { createFeed } from 'utils/testDataCreate'
+import { createFeed, createFilters } from 'utils/testDataCreate'
+
+import styles from './styles.module.scss'
 
 const IndexPage: NextPage = () => {
-  const feed = createFeed(10)
+  const feed = createFeed(20)
+  const filters = createFilters(8)
 
   return (
     <>
       <Head>
         <title>Главная страница</title>
       </Head>
-      <section>
+      <section className={styles.indexPageRoot}>
+        <h2 className={styles.title}>Популярные видео</h2>
+        <FiltersList filters={filters} />
         <VideoList videos={feed} />
       </section>
     </>

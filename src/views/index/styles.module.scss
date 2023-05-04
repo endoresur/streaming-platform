@@ -1,0 +1,14 @@
+@import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
+
+.indexPageRoot {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  grid-row-gap: $spacing-x3;
+}
+
+.title {
+  @include headline3;
+
+  display: block;
+}

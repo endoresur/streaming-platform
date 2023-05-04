@@ -1,0 +1,11 @@
+@import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
+
+.filtersListRoot {
+  max-height: 36px;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-column-gap: $spacing-x4;
+}
