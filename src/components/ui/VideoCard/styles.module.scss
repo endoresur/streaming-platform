@@ -5,8 +5,7 @@
   display: grid;
   grid-template-rows: 65% 35%;
 
-  width: 360px;
-  height: 300px;
+  min-height: 300px;
 
   background-color: $background-main;
   border-radius: $rounding10;
@@ -16,6 +15,20 @@
 .imageWrapper {
   position: relative;
   width: 100%;
+}
+
+.videoDuration {
+  display: block;
+
+  position: absolute;
+  bottom: $spacing-base;
+  right: $spacing-x2;
+
+  padding: 4px;
+  border-radius: $rounding5;
+
+  background-color: $text-main;
+  color: $text-white
 }
 
 .infoContainer {

@@ -14,6 +14,7 @@ const VideoCard = ({ video }: Props) => {
     <div className={styles.videoCardRoot} key={id}>
       <Link href={videoLink} passHref className={styles.imageWrapper}>
         <Image fill style={{ objectFit: 'cover' }} alt="" src={imageLink} priority />
+        <span className={styles.videoDuration}>{duration}</span>
       </Link>
       <div className={styles.infoContainer}>
         <Link href={author.link} passHref className={styles.authorImageWrapper}>

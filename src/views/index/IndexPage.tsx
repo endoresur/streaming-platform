@@ -1,4 +1,5 @@
 import VideoCard from 'components/ui/VideoCard'
+import VideoList from 'components/ui/VideoList'
 import { MainPageResponse } from 'models/entityModels/mainPage'
 import { NextPage } from 'next'
 import Head from 'next/head'
@@ -13,7 +14,7 @@ const IndexPage: NextPage = () => {
         <title>Главная страница</title>
       </Head>
       <section>
-        <VideoCard video={feed[0]} />
+        <VideoList videos={feed} />
       </section>
     </>
   )

@@ -2,5 +2,9 @@
 
 
 .videoListRoot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
+  grid-column-gap: $spacing-x3;
+  grid-row-gap: $spacing-x2;
 }
