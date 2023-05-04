@@ -30,17 +30,10 @@
   display: none;
 }
 
-.contentContainer {
+.pageContainer {
   width: 100%;
-  min-width: 1280px;
-  max-width: 1920px;
-  padding: 0 30px;
+  max-width: 1600px;
+  padding: $spacing-x3 $spacing-x6;
   margin: 0 auto;
-
-  @media screen and (max-width: $desktop-width) {
-    min-width: 768px;
-  }
-  @media screen and (max-width: $tablet-width) {
-    min-width: 320px;
-  }
 }
+

@@ -16,7 +16,7 @@ export const createVideo = (): FeedVideo => {
       id: getRandomInt(10, 1000),
       link: '/static/images/image.jpeg'
     },
-    videoLink: `/${createRandomString(7)}`,
+    videoLink: `=qwer`,
     publicationDate: '10.02.23',
     title: createRandomString(getRandomInt(10, 15)),
     viewsCount: 1234,

@@ -1,3 +1,4 @@
+import Routes from 'constants/routes'
 import { FeedVideo } from 'models/entityModels/feed'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,7 +14,7 @@ const VideoCard = ({ video }: Props) => {
 
   return (
     <div className={styles.videoCardRoot} key={id}>
-      <Link href={videoLink} passHref className={styles.imageWrapper}>
+      <Link href={`${Routes.VIDEO}${videoLink}`} passHref className={styles.imageWrapper}>
         <Image fill style={{ objectFit: 'cover' }} alt={image.alt} key={image.id} src={image.link} priority />
         <span className={styles.videoDuration}>{convertSecondsToVideoDuration(duration)}</span>
       </Link>
@@ -29,7 +30,7 @@ const VideoCard = ({ video }: Props) => {
           />
         </Link>
         <div className={styles.videoInfo}>
-          <Link href={videoLink} passHref className={styles.title}>
+          <Link href={`${Routes.VIDEO}${videoLink}`} passHref className={styles.title}>
             {title}
           </Link>
           <Link href={author.link} passHref className={styles.authorName}>

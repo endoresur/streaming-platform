@@ -1,6 +1,9 @@
 @import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
 @import 'styles/_common.module.scss';
 
-.mePageRoot {
+.videoPageRoot {
   @extend .pageContainer;
+
+  background-color: gray;
 }

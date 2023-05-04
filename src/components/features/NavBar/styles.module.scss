@@ -1,7 +1,34 @@
 @import 'styles/_constants.module.scss';
 
-
 .navBarRoot {
+  position: fixed !important;
+  overflow: auto;
+  height: calc(100vh - 64px);
+  left: 0;
+  top: $spacing-x8;
+  bottom: 0;
+
+  transition: transform 200ms ease;
+}
+
+.navbarBack {
+  width: 220px;
+  transition: width 200ms ease;
+}
+
+.collapsedNav {
+  width: 120px !important;
+}
+
+.showNavBar {
+  transform: translateX(0) !important;
+}
+
+.hideNavBar {
+  transform: translateX(-100%);
+}
+
+.navbar {
   padding: 20px;
 }
 

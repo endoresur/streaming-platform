@@ -19,7 +19,7 @@ const Header = ({ onNavButtonClick }: Props) => {
       <div className={styles.headerInner}>
         <div className={styles.headerLeft}>
           {!isAuthPage && (
-            <button className={styles.navButton} onClick={onNavButtonClick}>
+            <button className={styles.navButton} onClick={() => onNavButtonClick()}>
               <MenuOutlined />
             </button>
           )}

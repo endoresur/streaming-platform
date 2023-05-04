@@ -4,34 +4,14 @@
   display: flex;
 }
 
-.navbar {
-  position: fixed !important;
-  overflow: auto;
-  height: calc(100vh - 64px);
-  left: 0;
-  top: $spacing-x8;
-  bottom: 0;
-}
-
 .content {
   padding-top: $spacing-x8;
-  padding-left: 220px;
-
   transition: padding-left 200ms ease;
-}
-
-.pageContent {
-  max-width: 1600px;
-  padding: $spacing-x3 $spacing-x6;
-  margin: 0 auto;
-}
-
-.navClosed {
-  padding-left: 120px !important;
 }
 
 .authContent {
   height: 100vh;
+  padding: 0 !important;
 }
 
 .footer {

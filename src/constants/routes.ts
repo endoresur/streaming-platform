@@ -1,7 +1,8 @@
 enum Routes {
   INDEX = '/',
   ME = '/me',
-  AUTH = '/auth'
+  AUTH = '/auth',
+  VIDEO = '/video'
 }
 
 export default Routes

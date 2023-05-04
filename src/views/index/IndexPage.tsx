@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 
 const IndexPage: NextPage = () => {
   const feed = createFeed(20)
-  const filters = createFilters(8)
+  const filters = createFilters(5)
 
   return (
     <>
