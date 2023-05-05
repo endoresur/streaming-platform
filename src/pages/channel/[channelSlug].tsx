@@ -1,4 +1,4 @@
-export { default } from 'views/video'
+export { default } from 'views/channel'
 import Routes from 'constants/routes'
 import { GetStaticPaths, GetStaticProps } from 'next'
 
@@ -10,5 +10,5 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return { paths: [{ params: { videoSlug: `${Routes.VIDEO}=qwer` } }], fallback: 'blocking' }
+  return { paths: [{ params: { slug: `${Routes.CHANNEL}/user` } }], fallback: 'blocking' }
 }

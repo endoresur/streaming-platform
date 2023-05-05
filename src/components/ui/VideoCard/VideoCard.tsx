@@ -19,7 +19,7 @@ const VideoCard = ({ video }: Props) => {
         <span className={styles.videoDuration}>{convertSecondsToVideoDuration(duration)}</span>
       </Link>
       <div className={styles.infoContainer}>
-        <Link href={author.link} passHref className={styles.authorImageWrapper}>
+        <Link href={`${Routes.CHANNEL}${author.link}`} passHref className={styles.authorImageWrapper}>
           <Image
             key={author.image.id}
             src={author.image.link}
@@ -33,7 +33,7 @@ const VideoCard = ({ video }: Props) => {
           <Link href={`${Routes.VIDEO}${videoLink}`} passHref className={styles.title}>
             {title}
           </Link>
-          <Link href={author.link} passHref className={styles.authorName}>
+          <Link href={`${Routes.CHANNEL}${author.link}`} passHref className={styles.authorName}>
             {author.name}
           </Link>
           <div className={styles.viewsPublicationWrapper}>

@@ -1,4 +1,3 @@
-import AuthorBlock from 'components/ui/AuthorBlock'
 import Routes from 'constants/routes'
 import { FeedVideo } from 'models/entityModels/video'
 import Image from 'next/image'
@@ -13,16 +12,14 @@ const Recommendations = ({ videos }: Props) => {
   return (
     <section className={styles.recommendationsRoot}>
       <span className={styles.title}>Рекомендованные видео</span>
-      {videos.map(({ author, image, videoLink, viewsCount, publicationDate }) => (
-        <Link href={`${Routes.VIDEO}${videoLink}`} passHref className={styles.recommendationItem}>
+      {videos.map(({ author, image, videoLink, viewsCount, publicationDate, id, title }) => (
+        <Link key={id} href={`${Routes.VIDEO}${videoLink}`} passHref className={styles.recommendationItem}>
           <div className={styles.image}>
-            <Image src={image.link} alt={image.alt} fill />
+            <Image src={image.link} alt={image.alt} fill style={{ objectFit: 'contain' }} priority />
           </div>
           <div className={styles.textBlock}>
-            <span className={styles.videoName}>
-              rtcytuvybiu gvhbjkl uvgb gvhb cvgbh cv vbuh yvtubh vgbh tfugyiuh tuvybi ctvyuyb
-            </span>
-            <Link href={author.link} passHref className={styles.authorLink}>
+            <span className={styles.videoName}>{title}</span>
+            <Link href={`${Routes.CHANNEL}${author.link}`} passHref className={styles.authorLink}>
               {author.name}
             </Link>
             <span className={styles.info}>

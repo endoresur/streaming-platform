@@ -1,3 +1,4 @@
+import Routes from 'constants/routes'
 import { Author as AuthorBlock } from 'models/entityModels/feed'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,7 +14,7 @@ interface Props {
 const AuthorBlock = ({ author, needToShowSubscribers = false, children }: Props) => {
   return (
     <div className={styles.authorRoot}>
-      <Link href={author.link} passHref className={styles.authorImage}>
+      <Link href={`${Routes.CHANNEL}${author.link}`} passHref className={styles.authorImage}>
         <Image
           key={author.image.id}
           src={author.image.link}
@@ -24,7 +25,7 @@ const AuthorBlock = ({ author, needToShowSubscribers = false, children }: Props)
         />
       </Link>
       <div className={styles.authorInfo}>
-        <Link href={author.link} passHref className={styles.authorName}>
+        <Link href={`${Routes.CHANNEL}${author.link}`} passHref className={styles.authorName}>
           {author.name}
         </Link>
         {needToShowSubscribers && (

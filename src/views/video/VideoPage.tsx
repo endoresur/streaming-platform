@@ -7,13 +7,10 @@ import Description from './components/Description'
 
 import Comments from './components/Comments'
 import Recommendations from './components/Recommendations'
-import { useRef } from 'react'
 import styles from './styles.module.scss'
 
 const VideoPage: NextPage = () => {
   const data = createVideoPageData()
-
-  const video = useRef<ReactPlayer>(null)
 
   return (
     <section className={styles.videoPageRoot}>
