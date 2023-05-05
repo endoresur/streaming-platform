@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 
-const CommentsBlock = () => {
+const Comments = () => {
   return <section>CommentsBlock</section>
 }
 
-export default CommentsBlock
+export default Comments

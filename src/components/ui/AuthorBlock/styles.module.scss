@@ -1,0 +1,32 @@
+@import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
+
+.authorRoot {
+  display: flex;
+  align-items: center;
+  column-gap: $spacing-base;
+
+  margin-bottom: $spacing-x2;
+
+  .authorImage {
+    position: relative;
+    height: 50px;
+    width: 50px;
+
+    align-self: flex-start;
+
+    border-radius: $roundingFull;
+    overflow: hidden;
+  }
+
+  .authorInfo {
+    .subscribersCount {
+      @include body2;
+      display: block;
+    }
+  }
+
+  .authorName {
+    @include button2;
+  }
+}

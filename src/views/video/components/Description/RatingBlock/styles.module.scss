@@ -1,0 +1,49 @@
+@import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
+
+.ratingBlockRoot {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+
+  height: 40px;
+  width: 240px;
+
+  border-radius: $rounding10;
+  overflow: hidden;
+  
+  background-color: $hover-light;  
+}
+
+.button {
+  @include button1;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: $spacing-base;
+  
+  padding: $spacing-base;
+  transition: background-color 200ms ease;
+
+  & svg {
+    display: block;
+    height: 100% !important;
+  }
+
+  &:hover {
+    background-color: $decor-purple;
+  }
+}
+
+.delimiter {
+    height: 100%;
+    width: 3px;
+  
+    background-color: $decor-purple;
+}
+
+.arrow {
+  transform: rotate(180deg);
+  transform-origin: center center
+}

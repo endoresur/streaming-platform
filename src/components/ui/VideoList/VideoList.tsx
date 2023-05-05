@@ -1,4 +1,4 @@
-import { FeedVideo } from 'models/entityModels/feed'
+import { FeedVideo } from 'models/entityModels/video'
 import VideoCard from '../VideoCard'
 import styles from './styles.module.scss'
 

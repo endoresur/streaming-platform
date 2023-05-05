@@ -12,7 +12,7 @@ export const createVideoPageData = (): Video => {
     id: getRandomInt(1, 10000),
     author: createAuthor(),
     comments: createComments(20),
-    likes: createLikes(),
+    rating: createLikes(),
     publicationDate: '10.03.23',
     recommendedVideos: createFeed(10),
     title: createRandomText(getRandomInt(3, 5), getRandomInt(4, 8)),
@@ -106,7 +106,8 @@ export const createAuthor = (): Author => {
       link: '/static/images/author.jpeg'
     },
     link: '/author',
-    name: createRandomString(getRandomInt(5, 12))
+    name: createRandomString(getRandomInt(5, 12)),
+    subscribersCount: getRandomInt(100, 1000)
   }
 }
 

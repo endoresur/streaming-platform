@@ -6,6 +6,7 @@ export interface Author {
   name: string
   link: string
   image: Image
+  subscribersCount: number
 }
 
 export interface Filter {

@@ -3,16 +3,17 @@ import DinamicHLSVideoPlayer from 'components/features/HLSVideoPlayer/DinamicHLS
 import ReactPlayer from 'react-player'
 
 import { createVideoPageData } from 'utils/testDataCreate'
-import Description from './components/DescriptionBlock'
+import Description from './components/Description'
 
 import styles from './styles.module.scss'
-import CommentsBlock from './components/CommentsBlock'
+import Comments from './components/Comments'
 import Recommendations from './components/Recommendations'
+import { useRef } from 'react'
 
 const VideoPage: NextPage = () => {
   const data = createVideoPageData()
 
-  console.log(data)
+  const video = useRef<ReactPlayer>(null)
 
   return (
     <section className={styles.videoPageRoot}>
@@ -24,14 +25,21 @@ const VideoPage: NextPage = () => {
           controls
           width="100%"
           height="100%"
-          className={styles['react-player']}
+          className={styles.reactPlayer}
         />
       </div>
 
       <div className={styles.videoPageData}>
-        <Description />
+        <Description
+          title={data.title}
+          author={data.author}
+          description={data.description}
+          rating={data.rating}
+          publicationDate={data.publicationDate}
+          viewsCount={data.viewsCount}
+        />
         <div className={styles.underDescriptionBlock}>
-          <CommentsBlock />
+          <Comments />
           <Recommendations />
         </div>
       </div>

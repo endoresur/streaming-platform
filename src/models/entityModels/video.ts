@@ -18,7 +18,7 @@ export interface FeedVideo extends VideoBase {
 }
 
 export interface Video extends VideoBase {
-  likes: Ratings
+  rating: Ratings
   comments: Comment[]
   recommendedVideos: FeedVideo[]
   description: string

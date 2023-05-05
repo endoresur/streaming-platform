@@ -1,5 +1,5 @@
 import Routes from 'constants/routes'
-import { FeedVideo } from 'models/entityModels/feed'
+import { FeedVideo } from 'models/entityModels/video'
 import Image from 'next/image'
 import Link from 'next/link'
 import { convertSecondsToVideoDuration } from 'utils/convert'

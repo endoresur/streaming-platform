@@ -1,7 +1,8 @@
 const Icons = {
   common: {
     logo: '/static/icons/logo.svg',
-    user: '/static/icons/user.svg'
+    user: '/static/icons/user.svg',
+    arrow: '/static/icons/arrow.svg'
   },
   header: {
     menu: '/static/icons/menu.svg'
