@@ -40,7 +40,7 @@ const VideoPage: NextPage = () => {
         />
         <div className={styles.underDescriptionBlock}>
           <Comments comments={data.comments} />
-          <Recommendations />
+          <Recommendations videos={data.recommendedVideos} />
         </div>
       </div>
     </section>

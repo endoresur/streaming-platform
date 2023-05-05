@@ -4,7 +4,7 @@
 .authorRoot {
   display: flex;
   align-items: center;
-  column-gap: $spacing-base;
+  column-gap: $spacing-x2;
 
   margin-bottom: $spacing-x2;
 
@@ -12,6 +12,8 @@
     position: relative;
     height: 50px;
     width: 50px;
+    min-height: 50px;
+    min-width: 50px;
 
     align-self: flex-start;
 

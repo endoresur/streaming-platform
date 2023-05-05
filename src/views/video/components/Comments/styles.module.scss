@@ -8,8 +8,8 @@
 
 .commentText {
   @include body2;
+}
 
-  .date {
-    @include body3;
-  }
+.date {
+  @include body3;
 }

@@ -1,0 +1,86 @@
+@import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
+
+.recommendationsRoot {
+  padding-left: $spacing-base;
+}
+
+.title {
+  @include headline4;
+
+  display: block;
+  margin-bottom: $spacing-x2;
+}
+
+.recommendationItem {
+  display: flex;
+
+  width: 100%;
+  height: 110px;
+
+  margin-bottom: $spacing-x3;
+
+  background-color: $background-main;
+  border-radius: $rounding10;
+  overflow: hidden;
+
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: box-shadow 200ms ease;
+  
+  &:hover {
+    box-shadow: rgba(99, 99, 99, 0.3) 0px 5px 10px 0px;
+    color: black;
+  }
+}
+
+.image {
+  position: relative;
+
+  min-width: 200px;
+  height: 110px;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: $spacing-base;
+
+  .videoName {
+    @include button2;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+
+    transition: color 200ms ease;
+
+    &:hover {
+      color: $blue300;
+    }
+  }
+
+  .authorLink {
+    @include body2;
+    display: block;
+  }
+
+  .info {
+    @include body3;
+    display: block;
+  }
+
+  .views {
+    @include body3;
+
+    &::after {
+      content: ' • ';
+    }
+  }
+
+  .publication {
+    @include body3;
+  }
+}
