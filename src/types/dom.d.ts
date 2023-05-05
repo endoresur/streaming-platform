@@ -1,0 +1,3 @@
+interface HTMLVideoElement {
+  webkitEnterFullscreen(): void
+}

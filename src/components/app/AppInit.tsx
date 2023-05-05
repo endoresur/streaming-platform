@@ -1,3 +1,4 @@
+import { StoreProvider } from 'context/StoreProvider'
 import AppLayout from './components'
 
 interface Props {
@@ -7,7 +8,9 @@ interface Props {
 const AppInit = ({ children }: Props) => {
   return (
     <>
-      <AppLayout>{children}</AppLayout>
+      <StoreProvider hydrationData={children.props.hydrationData}>
+        <AppLayout>{children}</AppLayout>
+      </StoreProvider>
     </>
   )
 }

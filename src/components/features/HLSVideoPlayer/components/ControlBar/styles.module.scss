@@ -1,0 +1,107 @@
+@import 'styles/_constants.module.scss';
+
+.controlBarRoot {
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+
+  width: 100%;
+  height: auto;
+}
+
+.controlsWrap {
+  display: flex;
+  justify-content: space-between;
+
+  height: 78px;
+  width: 100%;
+
+  padding: 0 16px;
+
+  margin-bottom: 10px;
+
+  @media screen and (max-width: $desktop-width) {
+    height: 40px;
+  }
+}
+
+.leftControls {
+  flex: 1 1 30%;
+  align-self: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.centerControls {
+  flex: 1 1 30%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+
+  & button {
+    margin: 0 10px;
+  }
+}
+
+.rightControls {
+  flex: 1 1 30%;
+  align-self: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.controlBase {
+  width: 50px;
+  height: 50px;
+
+  @media screen and (max-width: $desktop-width) {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.time {
+  color: #FFFFFF;
+  margin-left: 16px;
+  white-space: nowrap;
+
+  @media screen and (max-width: $tablet-width) {
+    margin-left: 0;
+
+    font-size: 10px;
+    line-height: 10px;
+  }
+}
+
+.shadow {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+
+  outline: none;
+
+  width: 100%;
+  height: 140%;
+
+  background: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.014) 8.8%,
+    hsla(0, 0%, 0%, 0.03) 17.2%,
+    hsla(0, 0%, 0%, 0.046) 25.2%,
+    hsla(0, 0%, 0%, 0.064) 32.8%,
+    hsla(0, 0%, 0%, 0.084) 40.1%,
+    hsla(0, 0%, 0%, 0.106) 47.2%,
+    hsla(0, 0%, 0%, 0.129) 53.9%,
+    hsla(0, 0%, 0%, 0.154) 60.3%,
+    hsla(0, 0%, 0%, 0.182) 66.5%,
+    hsla(0, 0%, 0%, 0.212) 72.5%,
+    hsla(0, 0%, 0%, 0.244) 78.3%,
+    hsla(0, 0%, 0%, 0.279) 83.9%,
+    hsla(0, 0%, 0%, 0.316) 89.4%,
+    hsla(0, 0%, 0%, 0.357) 94.8%,
+    hsla(0, 0%, 0%, 0.4) 100%
+  )
+}

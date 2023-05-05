@@ -1,0 +1,26 @@
+@import 'styles/_constants.module.scss';
+
+.externalButtonLinkRoot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 42px;
+  padding: 8px 16px;
+
+  background-color: $decor-yellow;
+  color: $background-main;
+
+  transition: background-color 0.3s ease;
+
+  border-radius: 18px;
+
+  @media screen and (max-width: $tablet-width) {
+    height: 24px;
+    border-radius: 12px;
+  }
+
+  &:hover {
+    background-color: $decor-purple;
+  }
+}

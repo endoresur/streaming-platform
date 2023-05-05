@@ -1,0 +1,197 @@
+@import 'styles/_constants.module.scss';
+
+.videoPlayerRoot {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.videoFullWidth {
+  position: relative;
+}
+
+.backVideoLayout {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+
+  padding-top: 56.25%;
+}
+
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  width: 100%;
+
+  padding-top: 56.25%;
+
+  border-radius: $rounding50;
+  box-sizing: content-box;
+  transform: translateZ(0);
+
+  @media screen and (max-width: $tablet-width) {
+    border-radius: $rounding30;
+  }
+}
+
+.fullscreen {
+  border-radius: 0;
+  padding: 0;
+  background: '#000';
+  //for ipad which not want to reset borders
+  overflow: 'visible';
+
+  @media screen and (max-width: $tablet-width) {
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  object-fit: contain;
+}
+
+.bigCentredButton {
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+
+  height: 100px;
+  width: 100px;
+
+  @media screen and (max-width: $tablet-width) {
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+  
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
+
+.spinnerShow {
+  @extend .bigCentredButton;
+
+  opacity: 1;
+  visibility: visible;
+  animation: rotate 1s ease-in-out infinite;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.spinnerHide {
+  @extend .bigCentredButton;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.replayButton {
+  @extend .bigCentredButton;
+  outline: none;
+
+  & div {
+    height: 48px;
+    width: 48px;
+    
+    @media screen and (max-width: $tablet-width) {
+      height: 29px;
+      width: 29px;
+    }
+  }
+}
+
+.playIcon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+
+  @media screen and (max-width: $desktop-width) {
+    width: 50px;
+    height: 50px;
+  }
+  @media screen and (max-width: $tablet-width) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.controlBarBase {
+  padding: 0 24px;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &:focus-visible {
+    outline: none;
+    border-radius: none;
+  }
+}
+
+.controlBarOpen {
+  @extend .controlBarBase;
+
+  opacity: 1;
+  visibility: visible;
+}
+
+.controlBarClose {
+  @extend .controlBarBase;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.externalButtonBase {
+  position: absolute;
+  right: 40px;
+  top: 24px;
+
+  text-transform: uppercase;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+
+  @media screen and (max-width: $tablet-width) {
+    top: 8px;
+    right: 16.5px;
+  }
+}
+
+.externalButtonOpen {
+  @extend .externalButtonBase;
+
+  opacity: 1;
+  visibility: visible;
+}
+
+.externalButtonClose {
+  @extend .externalButtonBase;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.transparent {
+  opacity: 0;
+  visibility: hidden;
+}
