@@ -3,7 +3,34 @@
 @import 'styles/_common.module.scss';
 
 .videoPageRoot {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.playerWrapper {
+  position: relative;
+  // padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
+
+.reactPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  & video {
+    height: auto !important;
+  }
+}
+
+.videoPageData {
   @extend .pageContainer;
 
-  background-color: gray;
+  max-width: 1280px;
+
+  background-color: $background-main;
+}
+
+.underDescriptionBlock {
+  
 }

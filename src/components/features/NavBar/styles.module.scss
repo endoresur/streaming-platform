@@ -2,6 +2,7 @@
 
 .navBarRoot {
   position: fixed !important;
+  z-index: 1;
   overflow: auto;
   height: calc(100vh - 64px);
   left: 0;

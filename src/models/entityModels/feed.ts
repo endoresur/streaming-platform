@@ -8,21 +8,20 @@ export interface Author {
   image: Image
 }
 
-export interface FeedVideo {
-  id: number
-  title: string
-  image: Image
-  videoLink: string
-  author: Author
-  viewsCount: number
-  publicationDate: string
-  duration: number
-  isStream: boolean
-  filters: Filter[]
-}
-
 export interface Filter {
   id: number
   title: string
   link: string
+}
+
+export interface Ratings {
+  likes: number
+  dislikes: number
+}
+
+export interface Comment {
+  user: Author
+  text: string
+  publicationDate: string
+  likes: Ratings
 }

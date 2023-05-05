@@ -1,18 +1,40 @@
 import { NextPage } from 'next'
 import DinamicHLSVideoPlayer from 'components/features/HLSVideoPlayer/DinamicHLSVideoPlayer'
+import ReactPlayer from 'react-player'
+
+import { createVideoPageData } from 'utils/testDataCreate'
+import Description from './components/DescriptionBlock'
 
 import styles from './styles.module.scss'
+import CommentsBlock from './components/CommentsBlock'
+import Recommendations from './components/Recommendations'
 
 const VideoPage: NextPage = () => {
+  const data = createVideoPageData()
+
+  console.log(data)
+
   return (
     <section className={styles.videoPageRoot}>
-      {/* <DinamicHLSVideoPlayer videoLink="/static/videos/video.mp4" /> */}
       {/* <DinamicHLSVideoPlayer videoLink="/static/videos/newVideo.webm" /> */}
-      {/* <DinamicHLSVideoPlayer videoLink="https://2ch.hk/b/src/286705727/16832778967670.webm" /> */}
-      {/* <DinamicHLSVideoPlayer videoLink="https://2ch.hk/b/src/286694640/16832476981630.mp4" /> */}
-      {/* <video src="https://2ch.hk/b/src/286694640/16832476981630.mp4" controls></video> */}
-      {/* <video src="https://2ch.hk/b/src/286698519/16832568651330.webm" controls></video> */}
-      <video src="/static/videos/newVideo.webm" controls></video>
+
+      <div className={styles.playerWrapper}>
+        <ReactPlayer
+          url={'/static/videos/newVideo.webm'}
+          controls
+          width="100%"
+          height="100%"
+          className={styles['react-player']}
+        />
+      </div>
+
+      <div className={styles.videoPageData}>
+        <Description />
+        <div className={styles.underDescriptionBlock}>
+          <CommentsBlock />
+          <Recommendations />
+        </div>
+      </div>
     </section>
   )
 }

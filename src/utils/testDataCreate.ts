@@ -1,8 +1,45 @@
-import { Author, FeedVideo, Filter } from 'models/entityModels/feed'
+import { Author, Comment, Filter, Ratings } from 'models/entityModels/feed'
+import { FeedVideo, Video } from 'models/entityModels/video'
 
 export const createFeed = (count: number): FeedVideo[] => {
   const result: FeedVideo[] = []
   for (let i = 0; i < count; i++) result.push(createVideo())
+  return result
+}
+
+export const createVideoPageData = (): Video => {
+  return {
+    id: getRandomInt(1, 10000),
+    author: createAuthor(),
+    comments: createComments(20),
+    likes: createLikes(),
+    publicationDate: '10.03.23',
+    recommendedVideos: createFeed(10),
+    title: createRandomText(getRandomInt(3, 5), getRandomInt(4, 8)),
+    viewsCount: 12345,
+    description: createRandomText(getRandomInt(10, 30), getRandomInt(4, 10))
+  }
+}
+
+export const createLikes = (): Ratings => {
+  return {
+    likes: getRandomInt(10, 1000),
+    dislikes: getRandomInt(10, 1000)
+  }
+}
+
+export const createComments = (count: number): Comment[] => {
+  const result: Comment[] = []
+
+  for (let i = 0; i < count; i++) {
+    result.push({
+      likes: createLikes(),
+      publicationDate: '05.05.23',
+      text: createRandomText(getRandomInt(3, 15), getRandomInt(4, 10)),
+      user: createAuthor()
+    })
+  }
+
   return result
 }
 
@@ -37,6 +74,16 @@ export const createFilter = (): Filter => {
     title: createRandomString(getRandomInt(4, 10)),
     link: `/${createRandomString(7)}`
   }
+}
+
+export const createRandomText = (wordsCount: number, wordLength: number): string => {
+  const result: string[] = []
+
+  for (let i = 0; i < wordsCount; i++) {
+    result.push(createRandomString(wordLength))
+  }
+
+  return result.join(' ')
 }
 
 export const createRandomString = (length: number) => {
