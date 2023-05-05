@@ -1,0 +1,15 @@
+@import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
+
+.comment {
+  margin-top: 4px;
+  margin-bottom: $spacing-base;
+}
+
+.commentText {
+  @include body2;
+
+  .date {
+    @include body3;
+  }
+}

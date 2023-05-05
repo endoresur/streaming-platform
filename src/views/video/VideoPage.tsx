@@ -5,10 +5,10 @@ import ReactPlayer from 'react-player'
 import { createVideoPageData } from 'utils/testDataCreate'
 import Description from './components/Description'
 
-import styles from './styles.module.scss'
 import Comments from './components/Comments'
 import Recommendations from './components/Recommendations'
 import { useRef } from 'react'
+import styles from './styles.module.scss'
 
 const VideoPage: NextPage = () => {
   const data = createVideoPageData()
@@ -39,7 +39,7 @@ const VideoPage: NextPage = () => {
           viewsCount={data.viewsCount}
         />
         <div className={styles.underDescriptionBlock}>
-          <Comments />
+          <Comments comments={data.comments} />
           <Recommendations />
         </div>
       </div>
