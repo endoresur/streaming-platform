@@ -7,9 +7,10 @@ import styles from './styles.module.scss'
 
 interface Props {
   video: FeedVideo
+  hideAuthor?: boolean
 }
 
-const VideoCard = ({ video }: Props) => {
+const VideoCard = ({ video, hideAuthor = false }: Props) => {
   const { id, author, duration, isStream, image, publicationDate, title, viewsCount, videoLink } = video
 
   return (
@@ -33,9 +34,11 @@ const VideoCard = ({ video }: Props) => {
           <Link href={`${Routes.VIDEO}${videoLink}`} passHref className={styles.title}>
             {title}
           </Link>
-          <Link href={`${Routes.CHANNEL}${author.link}`} passHref className={styles.authorName}>
-            {author.name}
-          </Link>
+          {!hideAuthor && (
+            <Link href={`${Routes.CHANNEL}${author.link}`} passHref className={styles.authorName}>
+              {author.name}
+            </Link>
+          )}
           <div className={styles.viewsPublicationWrapper}>
             <span className={styles.viewsCount}>{viewsCount} просмотров</span>
             <span className={styles.publicationDate}>{publicationDate}</span>

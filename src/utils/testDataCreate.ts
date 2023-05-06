@@ -1,5 +1,19 @@
+import { ChannelPageResponse } from 'models/entityModels/channelPage'
 import { Author, Comment, Filter, Ratings } from 'models/entityModels/feed'
 import { FeedVideo, Video } from 'models/entityModels/video'
+
+export const createChannel = (): ChannelPageResponse => {
+  return {
+    id: getRandomInt(100, 10000),
+    author: createAuthor(),
+    bannerImage: {
+      link: '/static/images/image.jpeg',
+      id: getRandomInt(100, 10000),
+      alt: createRandomString(getRandomInt(5, 10))
+    },
+    feed: createFeed(getRandomInt(10, 30))
+  }
+}
 
 export const createFeed = (count: number): FeedVideo[] => {
   const result: FeedVideo[] = []

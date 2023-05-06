@@ -4,13 +4,14 @@ import styles from './styles.module.scss'
 
 interface Props {
   videos: FeedVideo[]
+  hideAuthor?: boolean
 }
 
-const VideoList = ({ videos }: Props) => {
+const VideoList = ({ videos, hideAuthor }: Props) => {
   return (
     <section className={styles.videoListRoot}>
       {videos.map(video => (
-        <VideoCard video={video} />
+        <VideoCard video={video} hideAuthor={hideAuthor} />
       ))}
     </section>
   )

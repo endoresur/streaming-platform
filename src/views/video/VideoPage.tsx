@@ -19,6 +19,7 @@ const VideoPage: NextPage = () => {
       <div className={styles.playerWrapper}>
         <ReactPlayer
           url={'/static/videos/newVideo.webm'}
+          // url={'/static/videos/video.mp4'}
           controls
           width="100%"
           height="100%"

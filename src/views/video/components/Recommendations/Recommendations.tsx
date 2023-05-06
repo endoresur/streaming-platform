@@ -15,7 +15,7 @@ const Recommendations = ({ videos }: Props) => {
       {videos.map(({ author, image, videoLink, viewsCount, publicationDate, id, title }) => (
         <Link key={id} href={`${Routes.VIDEO}${videoLink}`} passHref className={styles.recommendationItem}>
           <div className={styles.image}>
-            <Image src={image.link} alt={image.alt} fill style={{ objectFit: 'contain' }} priority />
+            <Image src={image.link} alt={image.alt} fill style={{ objectFit: 'cover' }} priority />
           </div>
           <div className={styles.textBlock}>
             <span className={styles.videoName}>{title}</span>

@@ -1,4 +1,4 @@
-import { FeedVideo } from './feed'
+import { FeedVideo } from './video'
 
 export interface MainPageResponse {
   filters: string[]

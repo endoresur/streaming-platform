@@ -9,12 +9,21 @@ interface Props {
   author: AuthorBlock
   needToShowSubscribers?: boolean
   children?: ReactNode
+  style?: {
+    imageClassName?: string
+    authorClassName?: string
+  }
+  disableLink?: boolean
 }
 
-const AuthorBlock = ({ author, needToShowSubscribers = false, children }: Props) => {
+const AuthorBlock = ({ author, needToShowSubscribers = false, children, style, disableLink = false }: Props) => {
   return (
     <div className={styles.authorRoot}>
-      <Link href={`${Routes.CHANNEL}${author.link}`} passHref className={styles.authorImage}>
+      <Link
+        href={`${Routes.CHANNEL}${author.link}`}
+        passHref
+        className={`${styles.authorImage} ${style?.imageClassName} ${disableLink && styles.disableLink}`}
+      >
         <Image
           key={author.image.id}
           src={author.image.link}
@@ -25,7 +34,11 @@ const AuthorBlock = ({ author, needToShowSubscribers = false, children }: Props)
         />
       </Link>
       <div className={styles.authorInfo}>
-        <Link href={`${Routes.CHANNEL}${author.link}`} passHref className={styles.authorName}>
+        <Link
+          href={`${Routes.CHANNEL}${author.link}`}
+          passHref
+          className={`${styles.authorName} ${style?.authorClassName} ${disableLink && styles.disableLink}`}
+        >
           {author.name}
         </Link>
         {needToShowSubscribers && (

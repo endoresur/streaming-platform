@@ -8,6 +8,10 @@
 
   margin-bottom: $spacing-x2;
 
+  .disableLink {
+    pointer-events: none;
+  }
+
   .authorImage {
     position: relative;
     height: 50px;
