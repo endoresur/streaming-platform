@@ -7,4 +7,5 @@ export interface ChannelPageResponse {
   bannerImage: Image
   author: Author
   feed: FeedVideo[]
+  description: string
 }

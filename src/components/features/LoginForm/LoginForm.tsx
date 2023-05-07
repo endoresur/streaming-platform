@@ -43,7 +43,7 @@ const LoginForm = () => {
         onFinish={() => {}}
       >
         <Form.Item
-          label="E-Mail"
+          label="Логин"
           name="email"
           rules={[
             {

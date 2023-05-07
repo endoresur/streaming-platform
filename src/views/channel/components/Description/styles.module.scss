@@ -1,0 +1,37 @@
+@import 'styles/_constants.module.scss';
+@import 'styles/_typography.module.scss';
+
+.descriptionRoot {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: $spacing-x2;
+}
+
+.description {
+  grid-column: 1 / 10;
+}
+
+.statistic {
+  grid-column: 10 / 13;
+}
+
+.statisticText {
+  @include body3;
+
+  display: block;
+  margin-bottom: $spacing-x2;
+  border-bottom: 1px solid $gray;
+}
+
+.descriptionTitle {
+  @include body1;
+
+  display: block;
+  margin-bottom: $spacing-x2;
+}
+
+.descriptionText {
+  @include body3;
+
+  display: block;
+}

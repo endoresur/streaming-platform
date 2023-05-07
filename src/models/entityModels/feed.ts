@@ -7,6 +7,7 @@ export interface Author {
   link: string
   image: Image
   subscribersCount: number
+  registrationDate: Date
 }
 
 export interface Filter {

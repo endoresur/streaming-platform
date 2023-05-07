@@ -11,7 +11,8 @@ export const createChannel = (): ChannelPageResponse => {
       id: getRandomInt(100, 10000),
       alt: createRandomString(getRandomInt(5, 10))
     },
-    feed: createFeed(getRandomInt(10, 30))
+    feed: createFeed(getRandomInt(10, 30)),
+    description: createRandomText(30, getRandomInt(4, 10))
   }
 }
 
@@ -121,7 +122,8 @@ export const createAuthor = (): Author => {
     },
     link: '/user',
     name: createRandomString(getRandomInt(5, 12)),
-    subscribersCount: getRandomInt(100, 1000)
+    subscribersCount: getRandomInt(100, 1000),
+    registrationDate: new Date('10.02.2019')
   }
 }
 
